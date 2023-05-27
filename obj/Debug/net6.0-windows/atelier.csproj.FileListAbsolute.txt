@@ -13,3 +13,6 @@ C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelie
 C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\ref\atelier.dll
 C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.pdb
 C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.genruntimeconfig.cache
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.FrmConnexion.resources
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.csproj.GenerateResource.cache
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.view.Form2.resources
