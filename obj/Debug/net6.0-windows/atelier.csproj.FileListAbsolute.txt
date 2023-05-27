@@ -1,0 +1,15 @@
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\atelier.exe
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\atelier.deps.json
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\atelier.runtimeconfig.json
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\atelier.dll
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\ref\atelier.dll
+C:\Users\960m\Desktop\test\programmes c#\atelier\bin\Debug\net6.0-windows\atelier.pdb
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.csproj.AssemblyReference.cache
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.AssemblyInfoInputs.cache
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.AssemblyInfo.cs
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.csproj.CoreCompileInputs.cache
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.dll
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\ref\atelier.dll
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.pdb
+C:\Users\960m\Desktop\test\programmes c#\atelier\obj\Debug\net6.0-windows\atelier.genruntimeconfig.cache
