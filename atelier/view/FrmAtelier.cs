@@ -90,5 +90,24 @@ namespace atelier
         {
             enCoursDeModifPersonnel = modif;
         }
+
+        //action du bouton supprimer
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelPersonnel(personnel);
+                    RemplirListePersonnels();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+
+        }
     }
 }

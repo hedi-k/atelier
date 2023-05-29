@@ -41,10 +41,15 @@ namespace atelier.controller
         {
             return serviceAccess.GetLesServices();
         }
-
+        //Demande l'ajout d'un personnel
         public void AddPersonnel(Personnel personnel)
         {
             personnelAccess.AddPersonnel(personnel);
+        }
+        //Demande la suppression d'un personnel
+        public void DelPersonnel(Personnel personnel)
+        {
+            personnelAccess.DelPersonnel(personnel);
         }
     }
 }

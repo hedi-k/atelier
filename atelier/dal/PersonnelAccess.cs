@@ -104,5 +104,25 @@ namespace atelier.dal
             }
         }
 
+        //supprime un personnel
+        public void DelPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "delete from personnel where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", personnel.Idpersonnel);
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
     }
 }
