@@ -42,7 +42,7 @@ namespace atelier
             this.cboService = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
@@ -159,14 +159,15 @@ namespace atelier
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
-            // button2
+            // btnModifier
             // 
-            this.button2.Location = new System.Drawing.Point(256, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModifier.Location = new System.Drawing.Point(256, 99);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(147, 23);
+            this.btnModifier.TabIndex = 13;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -181,7 +182,7 @@ namespace atelier
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSupprimer);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnModifier);
             this.groupBox2.Controls.Add(this.btnAjouter);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cboService);
@@ -232,7 +233,7 @@ namespace atelier
         private System.Windows.Forms.ComboBox cboService;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.GroupBox groupBox2;
     }

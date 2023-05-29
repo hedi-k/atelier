@@ -44,7 +44,7 @@ namespace atelier
         {
             List<Personnel> lesPersonnels = controller.GetLesPersonnels();
             bdgPersonnels.DataSource = lesPersonnels;
-            dgvPersonnel.DataSource = lesPersonnels;
+            dgvPersonnel.DataSource = bdgPersonnels;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -108,6 +108,24 @@ namespace atelier
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
 
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                EnCoursDeModifPersonnel(true);
+                Personnel personnel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                txtNom.Text = personnel.Nom;
+                txtPrenom.Text = personnel.Prenom;
+                txtTel.Text = personnel.Tel;
+                txtMail.Text = personnel.Mail;
+                cboService.SelectedIndex = cboService.FindStringExact(personnel.Service.Nom);
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
         }
     }
 }

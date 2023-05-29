@@ -52,21 +52,21 @@ namespace atelier.dal
             }
             
             return lesPersonnels;
-                  }
+        }
         //Demande modification d'un personnel
         public void UpdatePersonnel(Personnel personnel)
         {
             if (access.Manager != null)
             {
-                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail ";
-                //req += "where iddeveloppeur = @iddeveloppeur;";
+                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
+                req += "where idpersonnel = @idpersonnel;";//********************
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-              //  parameters.Add("@idDeveloppeur", developpeur.Iddeveloppeur);
+                parameters.Add("@idPersonnel", personnel.Idpersonnel);//****
                 parameters.Add("@nom", personnel.Nom);
                 parameters.Add("@prenom", personnel.Prenom);
                 parameters.Add("@tel", personnel.Tel);
                 parameters.Add("@mail", personnel.Mail);
-               // parameters.Add("idprofil", developpeur.Profil.Idprofil);
+                parameters.Add("idservice", personnel.Service.Idservice);//***
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
