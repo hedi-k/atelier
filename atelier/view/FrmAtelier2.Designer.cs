@@ -35,7 +35,7 @@ namespace atelier.view
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboService = new System.Windows.Forms.ComboBox();
+            this.cboMotif = new System.Windows.Forms.ComboBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@ namespace atelier.view
             this.groupBox2.Controls.Add(this.btnModifier);
             this.groupBox2.Controls.Add(this.btnAjouter);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.cboService);
+            this.groupBox2.Controls.Add(this.cboMotif);
             this.groupBox2.Controls.Add(this.txtMail);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtTel);
@@ -116,17 +116,17 @@ namespace atelier.view
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(410, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Sérvice:";
+            this.label5.Text = "Motif:";
             // 
-            // cboService
+            // cboMotif
             // 
-            this.cboService.FormattingEnabled = true;
-            this.cboService.Location = new System.Drawing.Point(462, 29);
-            this.cboService.Name = "cboService";
-            this.cboService.Size = new System.Drawing.Size(121, 21);
-            this.cboService.TabIndex = 10;
+            this.cboMotif.FormattingEnabled = true;
+            this.cboMotif.Location = new System.Drawing.Point(462, 29);
+            this.cboMotif.Name = "cboMotif";
+            this.cboMotif.Size = new System.Drawing.Size(121, 21);
+            this.cboMotif.TabIndex = 10;
             // 
             // txtMail
             // 
@@ -236,7 +236,7 @@ namespace atelier.view
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboService;
+        private System.Windows.Forms.ComboBox cboMotif;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTel;

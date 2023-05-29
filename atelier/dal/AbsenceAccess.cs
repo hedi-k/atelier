@@ -26,7 +26,7 @@ namespace atelier.dal
 
             if (access.Manager != null)
             {
-                string req = "select absence.idpersonnel as idpersonnel, absence.datedebut as datedebut, absence.idmotif as idmotif, absence.datefin as datefin from absence ;";
+                string req = "select absence.idpersonnel as idpersonnel, absence.datedebut as datedebut, motif.idmotif as idmotif, absence.datefin as datefin, motif.libelle as libelle from absence join motif on (absence.idmotif = motif.idmotif) ;";
 
                 try
                 {
@@ -36,8 +36,8 @@ namespace atelier.dal
                         foreach (Object[] record in records)
                         {
                             //La boucle a coder*************************************
-                            //Service service = new Service((int)record[5], (string)record[6]); a faire pareil avec motif
-                            Absence absence = new Absence((int)record[0], (DateTime)record[1], (int)record[2],
+                            Motif motif = new Motif((int)record[2], (string)record[4]);
+                            Absence absence = new Absence((int)record[0], (DateTime)record[1], motif,
                             (DateTime)record[3]);
                             lesAbsences.Add(absence);
                         }

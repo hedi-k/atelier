@@ -90,9 +90,11 @@
     <Compile Include="controller\FrmAterlierController.cs" />
     <Compile Include="dal\AbsenceAccess.cs" />
     <Compile Include="dal\Access.cs" />
+    <Compile Include="dal\MotifAccess.cs" />
     <Compile Include="dal\PersonnelAccess.cs" />
     <Compile Include="dal\ServiceAccess.cs" />
     <Compile Include="model\Absence.cs" />
+    <Compile Include="model\Motif.cs" />
     <Compile Include="model\Personnel.cs" />
     <Compile Include="model\Service.cs" />
     <Compile Include="view\FrmAtelier2.cs">

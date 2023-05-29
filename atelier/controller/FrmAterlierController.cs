@@ -23,6 +23,8 @@ namespace atelier.controller
             personnelAccess = new PersonnelAccess();
             serviceAccess = new ServiceAccess();
             absenceAccess = new AbsenceAccess();
+            motifAccess = new MotifAccess();
+
         }
 
         //Récupère et retourne les infos des personnels
@@ -58,12 +60,19 @@ namespace atelier.controller
         //*********************************Gestion des absences**********************************************
         //objet d'accès aux opérations possible sur absence
         private readonly AbsenceAccess absenceAccess;
+        //objet d'accès aux opérations possible sur motif
+        private readonly MotifAccess motifAccess;
 
         //Récupère et retourne les infos des absences
         public List<Absence> GetLesAbsences()
         {
-
             return absenceAccess.GetLesAbsences();
+        }
+
+        //Récupère et retourne les infos des motifs
+        public List<Motif> GetLesMotifs()
+        {
+            return motifAccess.GetLesMotifs();
         }
     }
 }

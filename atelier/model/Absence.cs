@@ -10,17 +10,17 @@ namespace atelier.model
     public class Absence
     {
         //valorise les propriétés
-        public Absence (int idpersonnel, DateTime datedebut ,int idmotif, DateTime datefin)
+        public Absence (int idpersonnel, DateTime datedebut , Motif motif, DateTime datefin)
         {
             this.Idpersonnel = idpersonnel;
             this.Datedebut = datedebut;
-            this.Idmotif = idmotif;
+            this.Motif = motif;
             this.Datefin = datefin;
         }
 
         public int Idpersonnel { get; }
         public DateTime Datedebut { get; set; }
-        public int Idmotif { get; set; } // ************* ici il va faloir changer comme profil
+        public Motif Motif { get; set; }
         public DateTime Datefin { get; set; }
        
 

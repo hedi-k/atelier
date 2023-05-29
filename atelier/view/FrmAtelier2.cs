@@ -17,7 +17,8 @@ namespace atelier.view
     {
         //Objet pour gérer la liste des absences
         private BindingSource bdgAbsences = new BindingSource();
-       
+        //Objet pour gérer la liste des motif
+        private BindingSource bdgMotif = new BindingSource();
         //Controleur de la fenêtre*********************Si tu effaces controller = new FrmAterlierController() efface elle aussi
         private FrmAterlierController controller;
 
@@ -33,6 +34,7 @@ namespace atelier.view
         {
             controller = new FrmAterlierController(); ///////////// GROS DOUTE pour cette commande
             RemplirListeAbsence();
+            RemplirListeMotif();
         }
 
         //Affiche les absences
@@ -42,6 +44,14 @@ namespace atelier.view
             bdgAbsences.DataSource = lesAbsences;
             dgvAbsence.DataSource = bdgAbsences;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        //Affiche les motifs
+        private void RemplirListeMotif()
+        {
+            List<Motif> lesMotifs = controller.GetLesMotifs();
+            bdgMotif.DataSource = lesMotifs;
+            cboMotif.DataSource = bdgMotif;
         }
 
         //action du bouton Absence
