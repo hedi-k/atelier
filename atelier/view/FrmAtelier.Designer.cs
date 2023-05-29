@@ -209,7 +209,7 @@ namespace atelier
             this.btnAbscence.Name = "btnAbscence";
             this.btnAbscence.Size = new System.Drawing.Size(84, 28);
             this.btnAbscence.TabIndex = 15;
-            this.btnAbscence.Text = "Abscence";
+            this.btnAbscence.Text = "Absence";
             this.btnAbscence.UseVisualStyleBackColor = true;
             this.btnAbscence.Click += new System.EventHandler(this.btnAbscence_Click);
             // 

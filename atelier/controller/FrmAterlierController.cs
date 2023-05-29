@@ -11,6 +11,7 @@ namespace atelier.controller
 {
     public class FrmAterlierController
     {
+        //*********************************Gestion du personnels**********************************************
         //objet d'accès aux opérations possibles sur Developpeur
         private readonly PersonnelAccess personnelAccess;
         //objet d'accès aux opérations possible sur service
@@ -21,6 +22,7 @@ namespace atelier.controller
         {
             personnelAccess = new PersonnelAccess();
             serviceAccess = new ServiceAccess();
+            absenceAccess = new AbsenceAccess();
         }
 
         //Récupère et retourne les infos des personnels
@@ -30,17 +32,18 @@ namespace atelier.controller
             return personnelAccess.GetLesPersonnels();
         }
 
+        //Récupère et retourne les infos des services
+        public List<Service> GetLesServices()
+        {
+            return serviceAccess.GetLesServices();
+        }
+
         //Demande la modif d'un personnel
         public void UpdatePersonnel(Personnel personnel)
         {
             personnelAccess.UpdatePersonnel(personnel);
         }
 
-        //Récupère et retourne les infos des services
-        public List<Service> GetLesServices()
-        {
-            return serviceAccess.GetLesServices();
-        }
         //Demande l'ajout d'un personnel
         public void AddPersonnel(Personnel personnel)
         {
@@ -50,6 +53,17 @@ namespace atelier.controller
         public void DelPersonnel(Personnel personnel)
         {
             personnelAccess.DelPersonnel(personnel);
+        }
+
+        //*********************************Gestion des absences**********************************************
+        //objet d'accès aux opérations possible sur absence
+        private readonly AbsenceAccess absenceAccess;
+
+        //Récupère et retourne les infos des absences
+        public List<Absence> GetLesAbsences()
+        {
+
+            return absenceAccess.GetLesAbsences();
         }
     }
 }

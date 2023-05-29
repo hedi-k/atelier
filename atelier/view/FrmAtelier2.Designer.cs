@@ -45,10 +45,10 @@ namespace atelier.view
             this.txtNom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvPersonnel = new System.Windows.Forms.DataGridView();
+            this.dgvAbsence = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -194,7 +194,7 @@ namespace atelier.view
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvPersonnel);
+            this.groupBox1.Controls.Add(this.dgvAbsence);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(625, 285);
@@ -202,13 +202,13 @@ namespace atelier.view
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "les absences";
             // 
-            // dgvPersonnel
+            // dgvAbsence
             // 
-            this.dgvPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonnel.Location = new System.Drawing.Point(6, 19);
-            this.dgvPersonnel.Name = "dgvPersonnel";
-            this.dgvPersonnel.Size = new System.Drawing.Size(637, 249);
-            this.dgvPersonnel.TabIndex = 0;
+            this.dgvAbsence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAbsence.Location = new System.Drawing.Point(6, 19);
+            this.dgvAbsence.Name = "dgvAbsence";
+            this.dgvAbsence.Size = new System.Drawing.Size(637, 249);
+            this.dgvAbsence.TabIndex = 0;
             // 
             // FrmAtelier2
             // 
@@ -220,11 +220,10 @@ namespace atelier.view
             this.Name = "FrmAtelier2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Tek 86 gestion des absences";
-            this.Load += new System.EventHandler(this.FrmAtelier2_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,6 +246,6 @@ namespace atelier.view
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvPersonnel;
+        private System.Windows.Forms.DataGridView dgvAbsence;
     }
 }
