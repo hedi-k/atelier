@@ -27,10 +27,11 @@ C:\Users\960m\source\repos\atelier\atelier\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\960m\source\repos\atelier\atelier\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\960m\source\repos\atelier\atelier\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.csproj.AssemblyReference.cache
-C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.FrmGestion.resources
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.Properties.Resources.resources
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.csproj.GenerateResource.cache
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.csproj.CoreCompileInputs.cache
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.csproj.CopyComplete
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.exe
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.pdb
+C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.FrmAtelier.resources
+C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.view.FrmAtelier2.resources

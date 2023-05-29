@@ -1,7 +1,7 @@
 ﻿
 namespace atelier
 {
-    partial class FrmGestion
+    partial class FrmAtelier
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -45,6 +45,7 @@ namespace atelier
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAbscence = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -151,9 +152,9 @@ namespace atelier
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(37, 99);
+            this.btnAjouter.Location = new System.Drawing.Point(16, 97);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(147, 23);
+            this.btnAjouter.Size = new System.Drawing.Size(84, 28);
             this.btnAjouter.TabIndex = 12;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -161,9 +162,9 @@ namespace atelier
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(256, 99);
+            this.btnModifier.Location = new System.Drawing.Point(177, 97);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(147, 23);
+            this.btnModifier.Size = new System.Drawing.Size(84, 28);
             this.btnModifier.TabIndex = 13;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -171,9 +172,9 @@ namespace atelier
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(436, 99);
+            this.btnSupprimer.Location = new System.Drawing.Point(338, 97);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(147, 23);
+            this.btnSupprimer.Size = new System.Drawing.Size(84, 28);
             this.btnSupprimer.TabIndex = 14;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -181,6 +182,7 @@ namespace atelier
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAbscence);
             this.groupBox2.Controls.Add(this.btnSupprimer);
             this.groupBox2.Controls.Add(this.btnModifier);
             this.groupBox2.Controls.Add(this.btnAjouter);
@@ -196,19 +198,30 @@ namespace atelier
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(18, 306);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 132);
+            this.groupBox2.Size = new System.Drawing.Size(625, 132);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "gestion des personnels";
             // 
-            // FrmGestion
+            // btnAbscence
+            // 
+            this.btnAbscence.Location = new System.Drawing.Point(499, 97);
+            this.btnAbscence.Name = "btnAbscence";
+            this.btnAbscence.Size = new System.Drawing.Size(84, 28);
+            this.btnAbscence.TabIndex = 15;
+            this.btnAbscence.Text = "Abscence";
+            this.btnAbscence.UseVisualStyleBackColor = true;
+            this.btnAbscence.Click += new System.EventHandler(this.btnAbscence_Click);
+            // 
+            // FrmAtelier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 450);
+            this.ClientSize = new System.Drawing.Size(661, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmGestion";
+            this.Name = "FrmAtelier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Tek 86 gestion du personnel";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnel)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -236,6 +249,7 @@ namespace atelier
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnAbscence;
     }
 }
 

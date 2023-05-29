@@ -16,7 +16,7 @@ namespace atelier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGestion());
+            Application.Run(new FrmAtelier());
             
            
         }

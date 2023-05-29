@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using atelier.model;
 using atelier.controller;
+using atelier.view;
 
 namespace atelier
 {
-    public partial class FrmGestion : Form
+    public partial class FrmAtelier : Form
     {
         //Objet pour gérer la liste des personnels
         private BindingSource bdgPersonnels = new BindingSource();
@@ -24,7 +25,7 @@ namespace atelier
         private Boolean enCoursDeModifPersonnel = false;
 
         // construction des composants graphiques et appel des autres initialisations
-        public FrmGestion()
+        public FrmAtelier()
         {
             InitializeComponent();
             Init();
@@ -126,6 +127,13 @@ namespace atelier
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
+        }
+
+        private void btnAbscence_Click(object sender, EventArgs e)
+        {
+            FrmAtelier2 frmAtelier2 = new FrmAtelier2();
+            frmAtelier2.Show();
+            this.Hide();
         }
     }
 }

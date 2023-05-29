@@ -93,6 +93,12 @@
     <Compile Include="dal\ServiceAccess.cs" />
     <Compile Include="model\Personnel.cs" />
     <Compile Include="model\Service.cs" />
+    <Compile Include="view\FrmAtelier2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmAtelier2.Designer.cs">
+      <DependentUpon>FrmAtelier2.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmAtelier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FrmAtelier2.resx">
+      <DependentUpon>FrmAtelier2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
