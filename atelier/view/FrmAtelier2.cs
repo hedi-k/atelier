@@ -61,5 +61,24 @@ namespace atelier.view
             frmAtelier.Show();
             this.Hide();
         }
+
+        //action du bouton supprimer
+        private void btnSupprimer2_Click(object sender, EventArgs e)
+        {
+            if(dgvAbsence.SelectedRows.Count > 0)
+            {
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                if(MessageBox.Show("Voulez-vous vraiment supprimer " + absence.Idpersonnel + "?" , "Confirmation de suppression", MessageBoxButtons.YesNo)== DialogResult.Yes)
+                {
+                    controller.DelAbsence(absence);
+                    RemplirListeAbsence();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+
+        }
     }
 }

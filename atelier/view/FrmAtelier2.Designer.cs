@@ -31,7 +31,7 @@ namespace atelier.view
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAbscence = new System.Windows.Forms.Button();
-            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnSupprimer2 = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace atelier.view
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnAbscence);
-            this.groupBox2.Controls.Add(this.btnSupprimer);
+            this.groupBox2.Controls.Add(this.btnSupprimer2);
             this.groupBox2.Controls.Add(this.btnModifier);
             this.groupBox2.Controls.Add(this.btnAjouter);
             this.groupBox2.Controls.Add(this.label5);
@@ -84,14 +84,15 @@ namespace atelier.view
             this.btnAbscence.UseVisualStyleBackColor = true;
             this.btnAbscence.Click += new System.EventHandler(this.btnAbscence_Click);
             // 
-            // btnSupprimer
+            // btnSupprimer2
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(338, 97);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(84, 28);
-            this.btnSupprimer.TabIndex = 14;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer2.Location = new System.Drawing.Point(338, 97);
+            this.btnSupprimer2.Name = "btnSupprimer2";
+            this.btnSupprimer2.Size = new System.Drawing.Size(84, 28);
+            this.btnSupprimer2.TabIndex = 14;
+            this.btnSupprimer2.Text = "Supprimer";
+            this.btnSupprimer2.UseVisualStyleBackColor = true;
+            this.btnSupprimer2.Click += new System.EventHandler(this.btnSupprimer2_Click);
             // 
             // btnModifier
             // 
@@ -232,7 +233,7 @@ namespace atelier.view
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAbscence;
-        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Button btnSupprimer2;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Label label5;

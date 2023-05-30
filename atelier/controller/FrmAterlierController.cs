@@ -74,5 +74,11 @@ namespace atelier.controller
         {
             return motifAccess.GetLesMotifs();
         }
+
+        //Demande la suppression d'un absent
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
     }
 }
