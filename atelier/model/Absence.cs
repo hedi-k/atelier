@@ -10,19 +10,23 @@ namespace atelier.model
     public class Absence
     {
         //valorise les propriétés
-        public Absence (int idpersonnel, DateTime datedebut , Motif motif, DateTime datefin)
+        public Absence (int idpersonnel, string nom, string prenom, DateTime datedebut, DateTime datefin, Motif motif)
         {
             this.Idpersonnel = idpersonnel;
+            this.Nom = nom;
+            this.Prenom = prenom;
             this.Datedebut = datedebut;
-            this.Motif = motif;
             this.Datefin = datefin;
+            this.Motif = motif;
         }
 
         public int Idpersonnel { get; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
         public DateTime Datedebut { get; set; }
-        public Motif Motif { get; set; }
         public DateTime Datefin { get; set; }
-       
+        public Motif Motif { get; set; }
+
 
     }
 }

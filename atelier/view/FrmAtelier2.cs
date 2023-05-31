@@ -68,7 +68,7 @@ namespace atelier.view
             if(dgvAbsence.SelectedRows.Count > 0)
             {
                 Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
-                if(MessageBox.Show("Voulez-vous vraiment supprimer " + absence.Idpersonnel + "?" , "Confirmation de suppression", MessageBoxButtons.YesNo)== DialogResult.Yes)
+                if(MessageBox.Show("Voulez-vous vraiment supprimer l'absence de " + absence.Nom+" "+absence.Prenom + "?" , "Confirmation de suppression", MessageBoxButtons.YesNo)== DialogResult.Yes)
                 {
                     controller.DelAbsence(absence);
                     RemplirListeAbsence();

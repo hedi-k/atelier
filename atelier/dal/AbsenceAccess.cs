@@ -26,8 +26,13 @@ namespace atelier.dal
 
             if (access.Manager != null)
             {
-                string req = "select absence.idpersonnel as idpersonnel, absence.datedebut as datedebut, motif.idmotif as idmotif, absence.datefin as datefin, motif.libelle as libelle from absence join motif on (absence.idmotif = motif.idmotif) ;";
-
+                /*
+                string req = "select absence.idpersonnel as idABS, personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail," +
+                    "service.idservice as idservice, service.nom as Service, absence.datedebut, absence.datefin, motif.idmotif, motif.libelle " +
+                    "from absence, personnel, motif, service; ";
+                */
+                string req ="select absence.idpersonnel, personnel.nom, personnel.prenom, absence.datedebut, absence.datefin, motif.idmotif as idmotif, motif.libelle as libelle " +
+                    "from personnel, motif, absence where absence.idpersonnel = personnel.idpersonnel;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -35,10 +40,22 @@ namespace atelier.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            //La boucle a coder*************************************
-                            Motif motif = new Motif((int)record[2], (string)record[4]);
-                            Absence absence = new Absence((int)record[0], (DateTime)record[1], motif,
-                            (DateTime)record[3]);
+                            /*
+                            //                                        idservice        Service
+                            Service service = new Service((int)record[6], (string)record[7]);
+                            //                                             idperso         nom                 prenom             tel                mail
+                            Personnel personnel = new Personnel((int)record[1], (string)record[2], (string)record[3], (string)record[4], (string)record[5], service);
+                            //                                 idMotif          libelle
+                            Motif motif = new Motif((int)record[10], (string)record[11]);
+                            //                                       idperso                   datedebut              datefin
+                            Absence absence = new Absence((int)record[0],personnel, (DateTime)record[8], (DateTime)record[9], motif);
+                            */
+
+                            //                                 idMotif          libelle
+                            Motif motif = new Motif((int)record[5], (string)record[6]);
+                            //                                   idperso               nom                prenom      datedebut    datefin
+                            Absence absence = new Absence((int)record[0],(string)record[1],(string)record[2],(DateTime)record[3], (DateTime)record[4], motif);
+
                             lesAbsences.Add(absence);
                         }
                     }
@@ -59,9 +76,9 @@ namespace atelier.dal
         {
             if (access.Manager != null)
             {
-                string req = "delete from absence where idpersonnel = @idpersonnel;";
+                string req = "delete from absence where datedebut = @datedebut;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idpersonnel", absence.Idpersonnel);
+                parameters.Add("@datedebut", absence.Datedebut);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
