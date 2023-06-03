@@ -77,9 +77,25 @@ namespace atelier.dal
         {
             if (access.Manager != null)
             {
-
+                string req = "update absence set idpersonnel = @idpersonnel, datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif ";
+                req += "where idpersonnel = @idpersonnel and datedebut = @datedebut ;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idpersonnel", absence.Idpersonnel);
+                parameters.Add("@datedebut", absence.Datedebut.ToString("yyyy-MM-dd HH:mm:ss"));
+                parameters.Add("@idmotif", absence.Motif.Idmotif);
+                parameters.Add("@datefin", absence.Datefin.ToString("yyyy-MM-dd HH:mm:ss"));
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Environment.Exit(0);
+                }
             }
         }
+        
 
         //ajout une absence
         public void AddAbsence(Absence absence)

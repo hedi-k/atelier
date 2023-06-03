@@ -94,6 +94,7 @@ namespace atelier.view
             this.btnModifier.TabIndex = 13;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnAjouter
             // 

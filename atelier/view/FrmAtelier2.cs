@@ -26,6 +26,8 @@ namespace atelier.view
         private FrmAterlierController controller;
         //Objet pour remplir la liste des absences
         private Personnel personnelSel;
+        // Booléen pour savoir si une modification est demandée
+        private Boolean enCoursDeModifABS = false;
 
         // construction des composants graphiques et appel des autres initialisations
         public FrmAtelier2(Personnel personnelSel)
@@ -42,6 +44,7 @@ namespace atelier.view
             controller = new FrmAterlierController(); ///////////// GROS DOUTE pour cette commande
             RemplirListeMotif();
             RemplirCboList();
+            EnCoursDeModifABS(false);
         }
 
         //Affiche la data grid view avec les absences
@@ -69,6 +72,12 @@ namespace atelier.view
             bdgMotif.DataSource = lesMotifs;
             cboMotif.DataSource = bdgMotif;
         }
+
+        private void EnCoursDeModifABS(Boolean modif)
+        {
+            enCoursDeModifABS = modif;
+        }
+
         //action du bouton Personnel
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
@@ -98,18 +107,50 @@ namespace atelier.view
         //action du bouton ajouter
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            Motif motif = (Motif)bdgMotif.List[bdgMotif.Position];
+           
             if (dtpDebut.Value < dtpFin.Value)
             {
+                Motif motif = (Motif)bdgMotif.List[bdgMotif.Position];
                 Personnel personnelSel = this.personnelSel;
-                Absence absence = new Absence(personnelSel.Idpersonnel, personnelSel.Nom, personnelSel.Prenom, dtpDebut.Value, dtpFin.Value, motif);
-                controller.AddAbsence(absence);
+                if (enCoursDeModifABS)
+                {
+                    Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                    absence.Datedebut = dtpDebut.Value;
+                    absence.Datedebut = dtpFin.Value;
+                    absence.Motif = motif;
+                    controller.UpdateAbsence(absence);
+                }
+                else
+                {
+                   
+                    Absence absence = new Absence(personnelSel.Idpersonnel, personnelSel.Nom, personnelSel.Prenom, dtpDebut.Value, dtpFin.Value, motif);
+                    controller.AddAbsence(absence);
+                }
                 RemplirListeAbsence(personnelSel);
+                EnCoursDeModifABS(false);
 
             }
             else
             {
                 MessageBox.Show("La date de début doit être avant la date de fin.", "Information");
+            }
+            
+        }
+
+        //action du bouton modifier
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsence.SelectedRows.Count > 0)
+            {
+                EnCoursDeModifABS(true);
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                dtpDebut.Value = absence.Datedebut;
+                dtpFin.Value = absence.Datefin;
+                cboMotif.SelectedIndex = cboMotif.FindStringExact(absence.Motif.Libelle);
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
     }
