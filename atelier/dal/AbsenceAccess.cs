@@ -19,68 +19,15 @@ namespace atelier.dal
             access = Access.GetInstance();
         }
 
-
-        /*        // Récupère et retourne les absences
-                public List<Absence> GetLesAbsences()
-                {
-
-                    List<Absence> lesAbsences = new List<Absence>();
-
-                    if (access.Manager != null)
-                    {
-                        *//*
-                        string req = "select absence.idpersonnel as idABS, personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail," +
-                            "service.idservice as idservice, service.nom as Service, absence.datedebut, absence.datefin, motif.idmotif, motif.libelle " +
-                            "from absence, personnel, motif, service; ";
-                        *//*
-                        string req ="select absence.idpersonnel, personnel.nom, personnel.prenom, absence.datedebut, absence.datefin, motif.idmotif as idmotif, motif.libelle as libelle " +
-                            "from personnel, motif, absence where absence.idpersonnel = personnel.idpersonnel;";
-                        try
-                        {
-                            List<Object[]> records = access.Manager.ReqSelect(req);
-                            Dictionary<string, object> parameters = new Dictionary<string, object>();
-                            if (records != null)
-                            {
-                                foreach (Object[] record in records)
-                                {
-
-
-                                    //                                 idMotif          libelle
-                                    Motif motif = new Motif((int)record[5], (string)record[6]);
-                                    //                                   idperso               nom                prenom      datedebut    datefin
-                                    Absence absence = new Absence((int)record[0],(string)record[1],(string)record[2],(DateTime)record[3], (DateTime)record[4], motif);
-
-                                    lesAbsences.Add(absence);
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                            Environment.Exit(0);
-                        }
-
-                    }
-
-                    return lesAbsences;
-                }*/
-
-
-
         public List<Absence> GetLesAbsences(Personnel personnelSel)
         {
-
             List<Absence> lesAbsences = new List<Absence>();
-
             if (access.Manager != null)
-            {
-                
-                
+            { 
                 string req = "select absence.idpersonnel, personnel.nom, personnel.prenom, absence.datedebut, absence.datefin, motif.idmotif, motif.libelle from personnel join absence on (personnel.idpersonnel = absence.idpersonnel) join motif on (absence.idmotif = motif.idmotif) where absence.idpersonnel = @idpersonnel ;";
                 try
                 {
-                    
-                    
+
                     Dictionary<string, object> parameters = new Dictionary<string, object>();
                     parameters.Add("@idPersonnel", personnelSel.Idpersonnel);
                     List<Object[]> records = access.Manager.ReqSelect(req, parameters);
@@ -88,13 +35,10 @@ namespace atelier.dal
                     {
                         foreach (Object[] record in records)
                         {
-
-
                             //                                 idMotif          libelle
                             Motif motif = new Motif((int)record[5], (string)record[6]);
                             //                                   idperso               nom                prenom      datedebut    datefin
                             Absence absence = new Absence((int)record[0], (string)record[1], (string)record[2], (DateTime)record[3], (DateTime)record[4], motif);
-
                             lesAbsences.Add(absence);
                         }
                     }
@@ -104,11 +48,10 @@ namespace atelier.dal
                     Console.WriteLine(e.Message);
                     Environment.Exit(0);
                 }
-
             }
-
             return lesAbsences;
         }
+
         //supprime un absent
         public void DelAbsence(Absence absence)
         {

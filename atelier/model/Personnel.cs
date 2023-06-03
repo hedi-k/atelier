@@ -18,7 +18,6 @@ namespace atelier.model
             this.Tel = tel;
             this.Mail = mail;
             this.Service = service;
-
         }
 
         public int Idpersonnel { get; }
@@ -27,7 +26,6 @@ namespace atelier.model
         public string Tel { get; set; }
         public string Mail { get; set; }
         public Service Service { get; set; }
-
     }
     
 }

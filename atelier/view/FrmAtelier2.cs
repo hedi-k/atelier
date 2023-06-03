@@ -44,7 +44,7 @@ namespace atelier.view
             RemplirCboList();
         }
 
-        //Affiche la dataa grid view avec les absences
+        //Affiche la data grid view avec les absences
         private void RemplirListeAbsence(Personnel personnelSel)
         {
             List<Absence> lesAbsences = controller.GetLesAbsences(personnelSel);
