@@ -23,7 +23,7 @@ namespace atelier
         private FrmAterlierController controller;
         // Booléen pour savoir si une modification est demandée
         private Boolean enCoursDeModifPersonnel = false;
-
+        
         // construction des composants graphiques et appel des autres initialisations
         public FrmAtelier()
         {
@@ -111,6 +111,7 @@ namespace atelier
 
         }
 
+        //action du bouton modifier
         private void btnModifier_Click(object sender, EventArgs e)
         {
             if (dgvPersonnel.SelectedRows.Count > 0)
@@ -129,11 +130,20 @@ namespace atelier
             }
         }
 
-        private void btnAbscence_Click(object sender, EventArgs e)
+        //actoin du bouton Absence
+        private void btnAbscence_Click_1(object sender, EventArgs e)
         {
-            FrmAtelier2 frmAtelier2 = new FrmAtelier2();
-            frmAtelier2.Show();
-            this.Hide();
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnelSel = (Personnel)bdgPersonnels.List[bdgPersonnels.Position];
+                FrmAtelier2 frmAtelier2 = new FrmAtelier2(personnelSel);
+                frmAtelier2.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
         }
     }
 }

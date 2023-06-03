@@ -26,7 +26,5 @@ namespace atelier.model
         public DateTime Datedebut { get; set; }
         public DateTime Datefin { get; set; }
         public Motif Motif { get; set; }
-
-
     }
 }

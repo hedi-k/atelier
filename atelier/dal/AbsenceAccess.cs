@@ -19,43 +19,26 @@ namespace atelier.dal
             access = Access.GetInstance();
         }
 
-        // Récupère et retourne les absences
-        public List<Absence> GetLesAbsences()
+        public List<Absence> GetLesAbsences(Personnel personnelSel)
         {
             List<Absence> lesAbsences = new List<Absence>();
-
             if (access.Manager != null)
-            {
-                /*
-                string req = "select absence.idpersonnel as idABS, personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail," +
-                    "service.idservice as idservice, service.nom as Service, absence.datedebut, absence.datefin, motif.idmotif, motif.libelle " +
-                    "from absence, personnel, motif, service; ";
-                */
-                string req ="select absence.idpersonnel, personnel.nom, personnel.prenom, absence.datedebut, absence.datefin, motif.idmotif as idmotif, motif.libelle as libelle " +
-                    "from personnel, motif, absence where absence.idpersonnel = personnel.idpersonnel;";
+            { 
+                string req = "select absence.idpersonnel, personnel.nom, personnel.prenom, absence.datedebut, absence.datefin, motif.idmotif, motif.libelle from personnel join absence on (personnel.idpersonnel = absence.idpersonnel) join motif on (absence.idmotif = motif.idmotif) where absence.idpersonnel = @idpersonnel ;";
                 try
                 {
-                    List<Object[]> records = access.Manager.ReqSelect(req);
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object>();
+                    parameters.Add("@idPersonnel", personnelSel.Idpersonnel);
+                    List<Object[]> records = access.Manager.ReqSelect(req, parameters);
                     if (records != null)
                     {
                         foreach (Object[] record in records)
                         {
-                            /*
-                            //                                        idservice        Service
-                            Service service = new Service((int)record[6], (string)record[7]);
-                            //                                             idperso         nom                 prenom             tel                mail
-                            Personnel personnel = new Personnel((int)record[1], (string)record[2], (string)record[3], (string)record[4], (string)record[5], service);
-                            //                                 idMotif          libelle
-                            Motif motif = new Motif((int)record[10], (string)record[11]);
-                            //                                       idperso                   datedebut              datefin
-                            Absence absence = new Absence((int)record[0],personnel, (DateTime)record[8], (DateTime)record[9], motif);
-                            */
-
                             //                                 idMotif          libelle
                             Motif motif = new Motif((int)record[5], (string)record[6]);
                             //                                   idperso               nom                prenom      datedebut    datefin
-                            Absence absence = new Absence((int)record[0],(string)record[1],(string)record[2],(DateTime)record[3], (DateTime)record[4], motif);
-
+                            Absence absence = new Absence((int)record[0], (string)record[1], (string)record[2], (DateTime)record[3], (DateTime)record[4], motif);
                             lesAbsences.Add(absence);
                         }
                     }
@@ -65,9 +48,7 @@ namespace atelier.dal
                     Console.WriteLine(e.Message);
                     Environment.Exit(0);
                 }
-
             }
-
             return lesAbsences;
         }
 
