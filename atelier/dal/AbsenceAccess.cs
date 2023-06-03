@@ -52,7 +52,7 @@ namespace atelier.dal
             return lesAbsences;
         }
 
-        //supprime un absent
+        //supprime une absence
         public void DelAbsence(Absence absence)
         {
             if (access.Manager != null)
@@ -69,6 +69,36 @@ namespace atelier.dal
                     Console.WriteLine(e.Message);
                     Environment.Exit(0);
                 }
+            }
+        }
+
+        //modifie une absence
+        public void UpdateAbsence (Absence absence)
+        {
+            if (access.Manager != null)
+            {
+
+            }
+        }
+
+        //ajout une absence
+        public void AddAbsence(Absence absence)
+        {
+            string req = "insert into absence(idpersonnel, datedebut, idmotif, datefin) ";
+            req += "values (@idpersonnel, @datedebut, @idmotif, @datefin); ";
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@idpersonnel", absence.Idpersonnel);
+            parameters.Add("@datedebut", absence.Datedebut.ToString("yyyy-MM-dd HH:mm:ss"));
+            parameters.Add("@idmotif", absence.Motif.Idmotif);
+            parameters.Add("@datefin", absence.Datefin.ToString("yyyy-MM-dd HH:mm:ss"));
+            try
+            {
+                access.Manager.ReqUpdate(req, parameters);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Environment.Exit(0);
             }
         }
     }

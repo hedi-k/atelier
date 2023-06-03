@@ -80,5 +80,16 @@ namespace atelier.controller
             absenceAccess.DelAbsence(absence);
         }
 
+        //Demande la modif d'une absence
+        public void UpdateAbsence(Absence absence)
+        {
+            absenceAccess.UpdateAbsence(absence);
+        }
+
+        //Demande l'ajout d'une absence
+        public void AddAbsence(Absence absence)
+        {
+            absenceAccess.AddAbsence(absence);
+        }
     }
 }

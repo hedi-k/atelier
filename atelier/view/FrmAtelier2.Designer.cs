@@ -34,14 +34,14 @@ namespace atelier.view
             this.btnSupprimer2 = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
-            this.cboPersonnelsABS = new System.Windows.Forms.ComboBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEssai = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvAbsence = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDebut = new System.Windows.Forms.DateTimePicker();
+            this.dtpFin = new System.Windows.Forms.DateTimePicker();
+            this.cboMotif = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsence)).BeginInit();
@@ -49,14 +49,14 @@ namespace atelier.view
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboMotif);
+            this.groupBox2.Controls.Add(this.dtpFin);
+            this.groupBox2.Controls.Add(this.dtpDebut);
             this.groupBox2.Controls.Add(this.btnPersonnel);
             this.groupBox2.Controls.Add(this.btnSupprimer2);
             this.groupBox2.Controls.Add(this.btnModifier);
             this.groupBox2.Controls.Add(this.btnAjouter);
-            this.groupBox2.Controls.Add(this.cboPersonnelsABS);
-            this.groupBox2.Controls.Add(this.txtMail);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtEssai);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 303);
@@ -103,55 +103,25 @@ namespace atelier.view
             this.btnAjouter.TabIndex = 12;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
-            // 
-            // cboPersonnelsABS
-            // 
-            this.cboPersonnelsABS.FormattingEnabled = true;
-            this.cboPersonnelsABS.Location = new System.Drawing.Point(68, 29);
-            this.cboPersonnelsABS.Name = "cboPersonnelsABS";
-            this.cboPersonnelsABS.Size = new System.Drawing.Size(194, 21);
-            this.cboPersonnelsABS.TabIndex = 10;
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(256, 61);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(147, 20);
-            this.txtMail.TabIndex = 9;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(207, 61);
+            this.label4.Location = new System.Drawing.Point(307, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Mail:";
-            // 
-            // txtEssai
-            // 
-            this.txtEssai.Location = new System.Drawing.Point(37, 61);
-            this.txtEssai.Name = "txtEssai";
-            this.txtEssai.Size = new System.Drawing.Size(147, 20);
-            this.txtEssai.TabIndex = 7;
+            this.label4.Text = "Date de fin";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 64);
+            this.label3.Location = new System.Drawing.Point(36, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Tél:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Personnel :";
+            this.label3.Text = "motif";
             // 
             // groupBox1
             // 
@@ -170,6 +140,37 @@ namespace atelier.view
             this.dgvAbsence.Name = "dgvAbsence";
             this.dgvAbsence.Size = new System.Drawing.Size(637, 249);
             this.dgvAbsence.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Date de début";
+            // 
+            // dtpDebut
+            // 
+            this.dtpDebut.Location = new System.Drawing.Point(84, 32);
+            this.dtpDebut.Name = "dtpDebut";
+            this.dtpDebut.Size = new System.Drawing.Size(200, 20);
+            this.dtpDebut.TabIndex = 16;
+            // 
+            // dtpFin
+            // 
+            this.dtpFin.Location = new System.Drawing.Point(373, 31);
+            this.dtpFin.Name = "dtpFin";
+            this.dtpFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFin.TabIndex = 17;
+            // 
+            // cboMotif
+            // 
+            this.cboMotif.FormattingEnabled = true;
+            this.cboMotif.Location = new System.Drawing.Point(84, 61);
+            this.cboMotif.Name = "cboMotif";
+            this.cboMotif.Size = new System.Drawing.Size(121, 21);
+            this.cboMotif.TabIndex = 18;
             // 
             // FrmAtelier2
             // 
@@ -196,13 +197,13 @@ namespace atelier.view
         private System.Windows.Forms.Button btnSupprimer2;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.ComboBox cboPersonnelsABS;
-        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEssai;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvAbsence;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDebut;
+        private System.Windows.Forms.DateTimePicker dtpFin;
+        private System.Windows.Forms.ComboBox cboMotif;
     }
 }

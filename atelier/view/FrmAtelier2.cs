@@ -53,13 +53,13 @@ namespace atelier.view
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        //rempli le combo
+        //rempli la combo
         private void RemplirCboList()
         {
-            List<Personnel> lesPersonnels = controller.GetLesPersonnels();
-            bdgPersonnelsABS.DataSource = lesPersonnels;
-            cboPersonnelsABS.DataSource = bdgPersonnelsABS;
-            cboPersonnelsABS.DisplayMember = "Nom";
+            List<Motif> motifABS = controller.GetLesMotifs();
+            bdgPersonnelsABS.DataSource = motifABS;
+            //cboPersonnelsABS.DataSource = bdgPersonnelsABS;
+            //cboPersonnelsABS.DisplayMember = "Nom";
 
         }
         //Affiche les motifs
@@ -67,7 +67,7 @@ namespace atelier.view
         {
             List<Motif> lesMotifs = controller.GetLesMotifs();
             bdgMotif.DataSource = lesMotifs;
-            cboPersonnelsABS.DataSource = bdgMotif;
+            cboMotif.DataSource = bdgMotif;
         }
         //action du bouton Personnel
         private void btnPersonnel_Click(object sender, EventArgs e)
@@ -95,5 +95,30 @@ namespace atelier.view
             }
         }
 
+        //action du bouton ajouter
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            Motif motif = (Motif)bdgMotif.List[bdgMotif.Position];
+            if (dtpDebut.Value < dtpFin.Value)
+            {
+                Personnel personnelSel = this.personnelSel;
+                Absence absence = new Absence(personnelSel.Idpersonnel, personnelSel.Nom, personnelSel.Prenom, dtpDebut.Value, dtpFin.Value, motif);
+                controller.AddAbsence(absence);
+                RemplirListeAbsence(personnelSel);
+
+            }
+            else
+            {
+                MessageBox.Show("La date de début doit être avant la date de fin.", "Information");
+            }
+        }
     }
 }
+/*
+//ajout d'un IF si on part de 0
+Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+absence.Motif = motif;
+absence.Datedebut = dtpDebut.Value;
+absence.Datefin = dtpFin.Value;
+controller.UpdateAbsence(absence);
+*/
