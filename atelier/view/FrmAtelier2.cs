@@ -11,6 +11,7 @@ using atelier.view;
 using atelier.model;
 using atelier.controller;
 
+
 namespace atelier.view
 {
     public partial class FrmAtelier2 : Form
@@ -19,66 +20,80 @@ namespace atelier.view
         private BindingSource bdgAbsences = new BindingSource();
         //Objet pour gérer la liste des motif
         private BindingSource bdgMotif = new BindingSource();
-        //Controleur de la fenêtre*********************Si tu effaces controller = new FrmAterlierController() efface elle aussi
+        //Objet pour gérer les peronnel de la combo
+        private BindingSource bdgPersonnelsABS = new BindingSource();
+        //Controleur de la fenêtre
         private FrmAterlierController controller;
+        //Objet pour remplir la liste des absences
+        private Personnel personnelSel;
 
         // construction des composants graphiques et appel des autres initialisations
-        public FrmAtelier2()
+        public FrmAtelier2(Personnel personnelSel)
         {
+            this.personnelSel = personnelSel;
             InitializeComponent();
             Init2();
+            RemplirListeAbsence(personnelSel);
         }
 
         //Initialisation
         private void Init2()
         {
             controller = new FrmAterlierController(); ///////////// GROS DOUTE pour cette commande
-            RemplirListeAbsence();
             RemplirListeMotif();
+            RemplirCboList();
         }
 
-        //Affiche les absences
-        private void RemplirListeAbsence()
+        //Affiche la dataa grid view avec les absences
+        private void RemplirListeAbsence(Personnel personnelSel)
         {
-            List<Absence> lesAbsences = controller.GetLesAbsences();
+            List<Absence> lesAbsences = controller.GetLesAbsences(personnelSel);
             bdgAbsences.DataSource = lesAbsences;
             dgvAbsence.DataSource = bdgAbsences;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
+        //rempli le combo
+        private void RemplirCboList()
+        {
+            List<Personnel> lesPersonnels = controller.GetLesPersonnels();
+            bdgPersonnelsABS.DataSource = lesPersonnels;
+            cboPersonnelsABS.DataSource = bdgPersonnelsABS;
+            cboPersonnelsABS.DisplayMember = "Nom";
+
+        }
         //Affiche les motifs
         private void RemplirListeMotif()
         {
             List<Motif> lesMotifs = controller.GetLesMotifs();
             bdgMotif.DataSource = lesMotifs;
-            cboMotif.DataSource = bdgMotif;
+            cboPersonnelsABS.DataSource = bdgMotif;
         }
-
-        //action du bouton Absence
-        private void btnAbscence_Click(object sender, EventArgs e)
+        //action du bouton Personnel
+        private void btnPersonnel_Click(object sender, EventArgs e)
         {
             FrmAtelier frmAtelier = new FrmAtelier();
             frmAtelier.Show();
             this.Hide();
         }
-
         //action du bouton supprimer
         private void btnSupprimer2_Click(object sender, EventArgs e)
         {
-            if(dgvAbsence.SelectedRows.Count > 0)
+            if (dgvAbsence.SelectedRows.Count > 0)
             {
+                Personnel personnelSel = this.personnelSel;
                 Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
-                if(MessageBox.Show("Voulez-vous vraiment supprimer l'absence de " + absence.Nom+" "+absence.Prenom + "?" , "Confirmation de suppression", MessageBoxButtons.YesNo)== DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer l'absence de " + absence.Nom + " " + absence.Prenom + "?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     controller.DelAbsence(absence);
-                    RemplirListeAbsence();
+                    RemplirListeAbsence(personnelSel);
                 }
             }
             else
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
-
         }
+
     }
 }

@@ -26,7 +26,7 @@ namespace atelier.dal
             
             if (access.Manager != null)
             {
-                 string req = "select personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail,service.idservice as idservice, service.nom as Service from personnel  join service  on (personnel.idservice = service.idservice) order by nom, prenom;";
+                 string req = "select personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail,service.idservice as idservice, service.nom as Service from personnel  join service  on (personnel.idservice = service.idservice) order by idpersonnel;";
                 
                 try
                 {
@@ -124,5 +124,6 @@ namespace atelier.dal
             }
         }
 
+       
     }
 }

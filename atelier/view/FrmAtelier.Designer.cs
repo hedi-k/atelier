@@ -211,7 +211,7 @@ namespace atelier
             this.btnAbscence.TabIndex = 15;
             this.btnAbscence.Text = "Absence";
             this.btnAbscence.UseVisualStyleBackColor = true;
-            this.btnAbscence.Click += new System.EventHandler(this.btnAbscence_Click);
+            this.btnAbscence.Click += new System.EventHandler(this.btnAbscence_Click_1);
             // 
             // FrmAtelier
             // 
