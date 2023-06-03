@@ -26,7 +26,7 @@ namespace atelier.dal
             
             if (access.Manager != null)
             {
-                 string req = "select personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail,service.idservice as idservice, service.nom as Service from personnel  join service  on (personnel.idservice = service.idservice) order by nom, prenom;";
+                 string req = "select personnel.idpersonnel as idpersonnel, personnel.nom as nom, personnel.prenom as prenom, personnel.tel as tel, personnel.mail as mail,service.idservice as idservice, service.nom as Service from personnel  join service  on (personnel.idservice = service.idservice) order by idpersonnel;";
                 
                 try
                 {
@@ -35,7 +35,7 @@ namespace atelier.dal
                     {
                         foreach (Object[] record in records)
                         {
-                            //System.Diagnostics.Debug.WriteLine("ça bloque ici");     ***********************************************************************
+                            //System.Diagnostics.Debug.WriteLine("ça bloque ici"); 
                             Service service = new Service((int)record[5], (string)record[6]);
                             Personnel personnel = new Personnel((int)record[0],(string)record[1], (string)record[2],
                             (string)record[3], (string)record[4], service) ;
@@ -48,7 +48,6 @@ namespace atelier.dal
                     Console.WriteLine(e.Message);
                     Environment.Exit(0);
                 }
-                
             }
             
             return lesPersonnels;
@@ -122,7 +121,6 @@ namespace atelier.dal
                     Environment.Exit(0);
                 }
             }
-        }
-
+        }  
     }
 }
