@@ -16,7 +16,7 @@ namespace atelier.view
     public partial class FrmAuthentification : Form
     {
         //Controleur de la fenêtre
-        private FrmAterlierController controller;
+        private FrmAtelierController controller;
         // Conrtuction des composants graphiques
         public FrmAuthentification()
         {
@@ -28,7 +28,7 @@ namespace atelier.view
         private void Init()
         {
             
-            controller = new FrmAterlierController(); ///////////// GROS DOUTE pour cette commande
+            controller = new FrmAtelierController(); ///////////// GROS DOUTE pour cette commande
         }
 
         //action du bouton connecter
@@ -47,8 +47,7 @@ namespace atelier.view
                 {
                     this.Hide();
                     FrmAtelier frm = new FrmAtelier();
-                    frm.ShowDialog();
-                    
+                    frm.ShowDialog();                
                 }
                 else
                 {

@@ -77,6 +77,7 @@ namespace atelier.dal
         {
             if (access.Manager != null)
             {
+                //Je ne sais vraiment pas ce qui ne fonctionne pas dans la requête 
                 string req = "update absence set idpersonnel = @idpersonnel, datedebut = @datedebut, datefin = @datefin, idmotif = @idmotif ";
                 req += "where idpersonnel = @idpersonnel and datedebut = @datedebut ;";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -96,7 +97,6 @@ namespace atelier.dal
             }
         }
         
-
         //ajout une absence
         public void AddAbsence(Absence absence)
         {

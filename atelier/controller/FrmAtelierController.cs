@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace atelier.controller
 {
-    public class FrmAterlierController
+    public class FrmAtelierController
     {
         //*********************************Gestion du personnels**********************************************//
         //objet d'accès aux opérations possibles sur Developpeur
@@ -18,7 +18,7 @@ namespace atelier.controller
         private readonly ServiceAccess serviceAccess;
 
         //Récupère les acces aux données
-        public FrmAterlierController()
+        public FrmAtelierController()
         {
             personnelAccess = new PersonnelAccess();
             serviceAccess = new ServiceAccess();
@@ -96,13 +96,6 @@ namespace atelier.controller
         //*********************************Gestion Authentification**********************************************//
         //objet d'accès aux opérations possibles sur responsable
         private readonly ResponsableAccess responsableAccess;
-
-        /*
-        public FrmAuthentificationController()
-        {
-            responsableAccess = new ResponsableAccess();
-        }
-        */
 
         public Boolean ControleAuthentification(Responsable responsable)
         {

@@ -20,7 +20,7 @@ namespace atelier
         //Objet pour gérer la liste des services
         private BindingSource bdgServices = new BindingSource();
         //Controleur de la fenêtre
-        private FrmAterlierController controller;
+        private FrmAtelierController controller;
         // Booléen pour savoir si une modification est demandée
         private Boolean enCoursDeModifPersonnel = false;
         
@@ -34,7 +34,7 @@ namespace atelier
         //Initialisation
         private void Init()
         {
-            controller = new FrmAterlierController();
+            controller = new FrmAtelierController();
             RemplirListePersonnels();
             RemplirListeService();
             EnCoursDeModifPersonnel(false);
@@ -108,7 +108,6 @@ namespace atelier
             {
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
-
         }
 
         //action du bouton modifier

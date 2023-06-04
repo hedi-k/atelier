@@ -18,6 +18,5 @@ namespace atelier.model
 
         public string Login { get; }
         public string Pwd { get; }
-
     }
 }

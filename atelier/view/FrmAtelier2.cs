@@ -23,7 +23,7 @@ namespace atelier.view
         //Objet pour gérer les peronnel de la combo
         private BindingSource bdgPersonnelsABS = new BindingSource();
         //Controleur de la fenêtre
-        private FrmAterlierController controller;
+        private FrmAtelierController controller;
         //Objet pour remplir la liste des absences
         private Personnel personnelSel;
         // Booléen pour savoir si une modification est demandée
@@ -41,7 +41,7 @@ namespace atelier.view
         //Initialisation
         private void Init2()
         {
-            controller = new FrmAterlierController(); ///////////// GROS DOUTE pour cette commande
+            controller = new FrmAtelierController(); ///////////// GROS DOUTE pour cette commande
             RemplirListeMotif();
             RemplirCboList();
             EnCoursDeModifABS(false);
@@ -134,7 +134,6 @@ namespace atelier.view
             {
                 MessageBox.Show("La date de début doit être avant la date de fin.", "Information");
             }
-            
         }
 
         //action du bouton modifier
@@ -155,11 +154,3 @@ namespace atelier.view
         }
     }
 }
-/*
-//ajout d'un IF si on part de 0
-Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
-absence.Motif = motif;
-absence.Datedebut = dtpDebut.Value;
-absence.Datefin = dtpFin.Value;
-controller.UpdateAbsence(absence);
-*/

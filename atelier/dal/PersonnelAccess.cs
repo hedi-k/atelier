@@ -52,6 +52,7 @@ namespace atelier.dal
             
             return lesPersonnels;
         }
+
         //Demande modification d'un personnel
         public void UpdatePersonnel(Personnel personnel)
         {

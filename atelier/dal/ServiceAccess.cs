@@ -44,7 +44,5 @@ namespace atelier.dal
             }
             return lesServices;
         }
-
-
     }
 }

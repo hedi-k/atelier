@@ -87,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bddmanager\BddManager.cs" />
-    <Compile Include="controller\FrmAterlierController.cs" />
+    <Compile Include="controller\FrmAtelierController.cs" />
     <Compile Include="dal\AbsenceAccess.cs" />
     <Compile Include="dal\Access.cs" />
     <Compile Include="dal\MotifAccess.cs" />
