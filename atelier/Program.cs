@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using atelier.view;
 
 namespace atelier
 {
@@ -16,9 +17,10 @@ namespace atelier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAtelier());
-            
-           
+            Application.Run(new FrmAuthentification());
+
+
+
         }
     }
 }

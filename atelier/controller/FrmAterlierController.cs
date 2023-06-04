@@ -24,6 +24,7 @@ namespace atelier.controller
             serviceAccess = new ServiceAccess();
             absenceAccess = new AbsenceAccess();
             motifAccess = new MotifAccess();
+            responsableAccess = new ResponsableAccess();
         }
 
         //Récupère et retourne les infos des personnels
@@ -90,6 +91,22 @@ namespace atelier.controller
         public void AddAbsence(Absence absence)
         {
             absenceAccess.AddAbsence(absence);
+        }
+
+        //*********************************Gestion Authentification**********************************************//
+        //objet d'accès aux opérations possibles sur responsable
+        private readonly ResponsableAccess responsableAccess;
+
+        /*
+        public FrmAuthentificationController()
+        {
+            responsableAccess = new ResponsableAccess();
+        }
+        */
+
+        public Boolean ControleAuthentification(Responsable responsable)
+        {
+            return responsableAccess.ControleAuthentification(responsable);
         }
     }
 }

@@ -35,3 +35,4 @@ C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.exe
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.pdb
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.FrmAtelier.resources
 C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.view.FrmAtelier2.resources
+C:\Users\960m\source\repos\atelier\atelier\obj\Debug\atelier.view.FrmAuthentification.resources
