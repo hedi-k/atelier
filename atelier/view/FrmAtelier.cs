@@ -46,6 +46,7 @@ namespace atelier
             List<Personnel> lesPersonnels = controller.GetLesPersonnels();
             bdgPersonnels.DataSource = lesPersonnels;
             dgvPersonnel.DataSource = bdgPersonnels;
+            dgvPersonnel.Columns["idpersonnel"].Visible = false;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 

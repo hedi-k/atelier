@@ -53,6 +53,7 @@ namespace atelier.view
             List<Absence> lesAbsences = controller.GetLesAbsences(personnelSel);
             bdgAbsences.DataSource = lesAbsences;
             dgvAbsence.DataSource = bdgAbsences;
+            dgvAbsence.Columns["idpersonnel"].Visible = false;
             dgvAbsence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -61,8 +62,6 @@ namespace atelier.view
         {
             List<Motif> motifABS = controller.GetLesMotifs();
             bdgPersonnelsABS.DataSource = motifABS;
-            //cboPersonnelsABS.DataSource = bdgPersonnelsABS;
-            //cboPersonnelsABS.DisplayMember = "Nom";
 
         }
         //Affiche les motifs
